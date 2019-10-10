@@ -1,24 +1,10 @@
-#include <algorithm>
-#include <climits>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <iomanip>
-#include <iostream>
-#include <list>
-#include <map>
-#include <queue>
-#include <string>
-#include <tr1/unordered_map>
-#include <vector>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 #define MAX 70
 #define INF 1000000000000000LL
 
 using namespace std;
-using namespace tr1;
 
 typedef long long int64;
 typedef pair<int, int> ii;

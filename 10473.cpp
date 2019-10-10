@@ -1,18 +1,8 @@
-#include <algorithm>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <iomanip>
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define INF 0x3f3f3f3f
 
 using namespace std;
-using namespace tr1;
 
 typedef long long int64;
 

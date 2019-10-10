@@ -1,16 +1,4 @@
-#include <algorithm>
-#include <climits>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <iomanip>
-#include <iostream>
-#include <list>
-#include <map>
-#include <queue>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define pb push_back
 #define MAX 150
@@ -44,17 +32,17 @@ struct edge {
 };
 
 int V, E, A;
-int64 f, sp, dist[MAX], p[MAX], prev[MAXV];
+int64 f, sp, dist[MAX], p[MAX], prv[MAXV];
 bool visited[MAX];
 vector<edge> graph(MAXV);
 vector<aresta> edges(MAXV);
 
 void addEdge(int u, int v, int64 c, int64 f)
 {
-    graph[A] = edge(u, v, prev[u], c, f);
-    prev[u] = A++;
-    graph[A] = edge(v, u, prev[v], -c, 0);
-    prev[v] = A++;
+    graph[A] = edge(u, v, prv[u], c, f);
+    prv[u] = A++;
+    graph[A] = edge(v, u, prv[v], -c, 0);
+    prv[v] = A++;
 }
 
 void augment(int v, int64 minEdge)
@@ -84,7 +72,7 @@ bool dijkstra(int s, int t)
     while (!q.empty()) {
         int u = q.front();
         q.pop();
-        for (int i = prev[u]; i != -1; i = graph[i].next) {
+        for (int i = prv[u]; i != -1; i = graph[i].next) {
             int v = graph[i].v;
             if (graph[i].flow && dist[u] + graph[i].cost < dist[v]) {
                 dist[v] = dist[u] + graph[i].cost;
@@ -107,7 +95,7 @@ int main()
     while (scanf("%d %d", &V, &E) != EOF) {
         A = 0;
         for (int i = 0; i <= V + 1; ++i)
-            prev[i] = -1;
+            prv[i] = -1;
         for (int i = 0; i < E; ++i)
             scanf("%d %d %lld", &edges[i].a, &edges[i].b, &edges[i].c);
         scanf("%lld %lld", &d, &k);

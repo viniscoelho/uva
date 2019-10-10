@@ -1,17 +1,10 @@
-#include <algorithm>
-#include <iostream>
-#include <list>
-#include <queue>
-#include <stack>
-#include <tr1/unordered_map>
-#include <vector>
+#include <bits/stdc++.h>
 #define INF 0x3f3f3f3f
 #define MAXV 4010
 #define pb push_back
 #define mp make_pair
 
 using namespace std;
-using namespace tr1;
 
 typedef pair<int, int> ii;
 typedef pair<int, string> is;

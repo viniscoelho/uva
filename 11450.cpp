@@ -5,7 +5,6 @@
 #define INF 0x3f3f3f3f
 
 using namespace std;
-//using namespace tr1;
 
 typedef pair<int, int> ii;
 typedef long long int64;
@@ -36,7 +35,7 @@ struct node {
     for ( int i = 1; i <= price[g][0]; i++ )
         ans = max(ans, solve(money - price[g][i], g+1)); //try all possible solutions
     return memo[money][g] = ans; //assign the value
- 
+
 }
 */
 

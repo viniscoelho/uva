@@ -1,14 +1,10 @@
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <tr1/unordered_map>
+#include <bits/stdc++.h>
 #define mp make_pair
 #define MAXDIGITS 2010
 #define PLUS 1
 #define MINUS -1
 
 using namespace std;
-using namespace tr1;
 
 typedef struct {
     char digits[MAXDIGITS];

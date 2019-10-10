@@ -1,16 +1,4 @@
-#include <algorithm>
-#include <cmath>
-#include <cstdio>
-#include <cstring>
-#include <iomanip>
-#include <iostream>
-#include <list>
-#include <map>
-#include <queue>
-#include <stack>
-#include <string>
-#include <tr1/unordered_map>
-#include <vector>
+#include <bits/stdc++.h>
 #define pb push_back
 #define mp make_pair
 #define INF 0x3f3f3f3f
@@ -19,7 +7,6 @@
 #define REPIT(it, V) for (list<int>::iterator it = V.begin(); it != V.end(); ++it)
 
 using namespace std;
-using namespace tr1;
 
 typedef pair<int, int> ii;
 typedef pair<int, ii> ii3;

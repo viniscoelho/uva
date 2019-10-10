@@ -1,30 +1,8 @@
-#include <algorithm>
-#include <bitset>
-#include <cassert>
-#include <cfloat>
-#include <climits>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <iomanip>
-#include <iostream>
-#include <list>
-#include <map>
-#include <queue>
-#include <set>
-#include <sstream>
-#include <stack>
-#include <string>
-#include <tr1/unordered_map>
-#include <utility>
-#include <vector>
+#include <bits/stdc++.h>
 #define pb push_back
 #define mp make_pair
 
 using namespace std;
-using namespace tr1;
 
 typedef vector<int> vi;
 typedef long long int64;
