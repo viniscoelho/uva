@@ -1,28 +1,28 @@
-#include <iostream>
 #include <algorithm>
-#include <map>
-#include <set>
-#include <list>
-#include <stack>
-#include <cmath>
-#include <queue>
-#include <ctime>
-#include <cfloat>
-#include <vector>
-#include <string>
-#include <cstdio>
 #include <bitset>
+#include <cassert>
+#include <cfloat>
 #include <climits>
+#include <cmath>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cassert>
+#include <ctime>
 #include <iomanip>
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
 #include <sstream>
-#include <utility>
+#include <stack>
+#include <string>
 #include <tr1/unordered_map>
-#define FOR(i, a, b) for ( int i = a; i <= b; ++i )
-#define RFOR(i, b, a) for ( int i = b; i >= a; --i )
-#define REP(i, N) for ( int i = 0; i < N; ++i )
+#include <utility>
+#include <vector>
+#define FOR(i, a, b) for (int i = a; i <= b; ++i)
+#define RFOR(i, b, a) for (int i = b; i >= a; --i)
+#define REP(i, N) for (int i = 0; i < N; ++i)
 #define MAXV 50
 #define INF 0x3F3F3F3F
 #define LINF 0x3F3F3F3FFFFFFFFFLL
@@ -37,22 +37,28 @@ typedef pair<int, int> ii;
 
 int visited[60], start[60], vis = 1;
 
-int main(){
-	int k, t, pos;
-	scanf("%d", &k);
-	while ( k-- ){
-		scanf("%d", &t);
-		REP( i, t ) scanf("%d", &start[i]);
-		int ans = 0;
-		REP( pos, t ){
-			visited[pos+1] = vis;
-			REP( j, t ){
-				if ( start[j] == pos+1 ) break;
-				if ( visited[start[j]] != vis ) ans++;
-			}
-		}
-		printf("Optimal train swapping takes %d swaps.\n", ans);
-		vis++;
-	}
-	return 0;
+int main()
+{
+    int k, t, pos;
+    scanf("%d", &k);
+    while (k--) {
+        scanf("%d", &t);
+        REP(i, t)
+        scanf("%d", &start[i]);
+        int ans = 0;
+        REP(pos, t)
+        {
+            visited[pos + 1] = vis;
+            REP(j, t)
+            {
+                if (start[j] == pos + 1)
+                    break;
+                if (visited[start[j]] != vis)
+                    ans++;
+            }
+        }
+        printf("Optimal train swapping takes %d swaps.\n", ans);
+        vis++;
+    }
+    return 0;
 }

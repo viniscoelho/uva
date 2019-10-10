@@ -1,12 +1,12 @@
-#include <iostream>
 #include <algorithm>
-#include <queue>
-#include <vector>
+#include <bitset>
+#include <iostream>
 #include <list>
+#include <map>
+#include <queue>
 #include <set>
 #include <string>
-#include <map>
-#include <bitset>
+#include <vector>
 #define mp make_pair
 #define pb push_back
 
@@ -21,29 +21,31 @@ int num;
 
 int64 race[1010], zeros[1010];
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
-	race[0] = 1, race[1] = 1, race[2] = 3, race[3] = 13;
-	for ( int i = 0; i < 1005; i++ ) zeros[i] = 1;
-	zeros[0] = 1, zeros[1] = 4, zeros[2] = 6, zeros[3] = 4;
-    for ( int i = 4; i <= 1000; i++ ) {
+    race[0] = 1, race[1] = 1, race[2] = 3, race[3] = 13;
+    for (int i = 0; i < 1005; i++)
+        zeros[i] = 1;
+    zeros[0] = 1, zeros[1] = 4, zeros[2] = 6, zeros[3] = 4;
+    for (int i = 4; i <= 1000; i++) {
         int64 resp = 0;
-        for ( int j = 0; j < i; ++j ){
+        for (int j = 0; j < i; ++j) {
             resp += (zeros[j] * race[j]) % 10056;
-			resp %= 10056;
-		}
+            resp %= 10056;
+        }
         race[i] = resp;
 
-        for ( int j = i; j >= 1; j-- ){
-            zeros[j] += zeros[j-1];
-			zeros[j] %= 10056;
-		}
+        for (int j = i; j >= 1; j--) {
+            zeros[j] += zeros[j - 1];
+            zeros[j] %= 10056;
+        }
     }
-	int n, t = 1;
-	cin >> n;
-	while ( n-- ){
-		cin >> num;
-		cout << "Case " << t++ << ": " << race[num] << "\n";
-	}
+    int n, t = 1;
+    cin >> n;
+    while (n--) {
+        cin >> num;
+        cout << "Case " << t++ << ": " << race[num] << "\n";
+    }
     return 0;
 }
